@@ -31,7 +31,7 @@ DeleteHealthchecksID deletes health check
 
 delete healthCheck
 */
-func (a *Client) DeleteHealthchecksID(params *DeleteHealthchecksIDParams) (*DeleteHealthchecksIDNoContent, error) {
+func (a *Client) DeleteHealthchecksID(params *DeleteHealthchecksIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteHealthchecksIDNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteHealthchecksIDParams()
@@ -46,6 +46,7 @@ func (a *Client) DeleteHealthchecksID(params *DeleteHealthchecksIDParams) (*Dele
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &DeleteHealthchecksIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -67,7 +68,7 @@ DeleteRoutingpoliciesID deletes health check
 
 delete healthCheck
 */
-func (a *Client) DeleteRoutingpoliciesID(params *DeleteRoutingpoliciesIDParams) (*DeleteRoutingpoliciesIDNoContent, error) {
+func (a *Client) DeleteRoutingpoliciesID(params *DeleteRoutingpoliciesIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRoutingpoliciesIDNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteRoutingpoliciesIDParams()
@@ -82,6 +83,7 @@ func (a *Client) DeleteRoutingpoliciesID(params *DeleteRoutingpoliciesIDParams) 
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &DeleteRoutingpoliciesIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -103,7 +105,7 @@ GetHealthchecks gets healthchecks
 
 get healthchecks
 */
-func (a *Client) GetHealthchecks(params *GetHealthchecksParams) (*GetHealthchecksOK, error) {
+func (a *Client) GetHealthchecks(params *GetHealthchecksParams, authInfo runtime.ClientAuthInfoWriter) (*GetHealthchecksOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetHealthchecksParams()
@@ -118,6 +120,7 @@ func (a *Client) GetHealthchecks(params *GetHealthchecksParams) (*GetHealthcheck
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &GetHealthchecksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -139,7 +142,7 @@ GetRoutingpolicies gets routingpolicies
 
 get routingpolicies
 */
-func (a *Client) GetRoutingpolicies(params *GetRoutingpoliciesParams) (*GetRoutingpoliciesOK, error) {
+func (a *Client) GetRoutingpolicies(params *GetRoutingpoliciesParams, authInfo runtime.ClientAuthInfoWriter) (*GetRoutingpoliciesOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRoutingpoliciesParams()
@@ -154,6 +157,7 @@ func (a *Client) GetRoutingpolicies(params *GetRoutingpoliciesParams) (*GetRouti
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &GetRoutingpoliciesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -175,7 +179,7 @@ PostHealthchecks creates health check
 
 create healthCheck
 */
-func (a *Client) PostHealthchecks(params *PostHealthchecksParams) (*PostHealthchecksCreated, error) {
+func (a *Client) PostHealthchecks(params *PostHealthchecksParams, authInfo runtime.ClientAuthInfoWriter) (*PostHealthchecksCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostHealthchecksParams()
@@ -190,6 +194,7 @@ func (a *Client) PostHealthchecks(params *PostHealthchecksParams) (*PostHealthch
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PostHealthchecksReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -211,7 +216,7 @@ PostRoutingpolicies creates health check
 
 create healthCheck
 */
-func (a *Client) PostRoutingpolicies(params *PostRoutingpoliciesParams) (*PostRoutingpoliciesCreated, error) {
+func (a *Client) PostRoutingpolicies(params *PostRoutingpoliciesParams, authInfo runtime.ClientAuthInfoWriter) (*PostRoutingpoliciesCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostRoutingpoliciesParams()
@@ -226,6 +231,7 @@ func (a *Client) PostRoutingpolicies(params *PostRoutingpoliciesParams) (*PostRo
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PostRoutingpoliciesReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -247,7 +253,7 @@ PutHealthchecksID updates health check
 
 update healthCheck
 */
-func (a *Client) PutHealthchecksID(params *PutHealthchecksIDParams) (*PutHealthchecksIDOK, error) {
+func (a *Client) PutHealthchecksID(params *PutHealthchecksIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutHealthchecksIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutHealthchecksIDParams()
@@ -262,6 +268,7 @@ func (a *Client) PutHealthchecksID(params *PutHealthchecksIDParams) (*PutHealthc
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutHealthchecksIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -283,7 +290,7 @@ PutRoutingpoliciesID updates health check
 
 update healthCheck
 */
-func (a *Client) PutRoutingpoliciesID(params *PutRoutingpoliciesIDParams) (*PutRoutingpoliciesIDOK, error) {
+func (a *Client) PutRoutingpoliciesID(params *PutRoutingpoliciesIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRoutingpoliciesIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutRoutingpoliciesIDParams()
@@ -298,6 +305,7 @@ func (a *Client) PutRoutingpoliciesID(params *PutRoutingpoliciesIDParams) (*PutR
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutRoutingpoliciesIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
