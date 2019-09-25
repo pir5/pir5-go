@@ -21,4 +21,13 @@ func main() {
 	})
 	pp.Println(err)
 	pp.Println(res)
+
+	rp := operations.NewGetRecordsParamsWithTimeout(10 * time.Second)
+	rp.DomainID = &id
+	rres, rerr := client.Operations.GetRecords(rp, dnsapi.HeaderAuthentication{
+		ID:     "pir-5-id",
+		Secret: "pir-5-secret",
+	})
+	pp.Println(rerr)
+	pp.Println(rres)
 }
