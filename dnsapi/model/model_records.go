@@ -70,7 +70,7 @@ type ModelRecordsItems0 struct {
 	Name string `json:"name,omitempty"`
 
 	// older name
-	OlderName string `json:"ordername,omitempty"`
+	OrderName string `json:"ordername,omitempty"`
 
 	// prio
 	Prio int64 `json:"prio,omitempty"`
