@@ -48,6 +48,9 @@ func (m ModelRoutingPolicies) Validate(formats strfmt.Registry) error {
 // swagger:model ModelRoutingPoliciesItems0
 type ModelRoutingPoliciesItems0 struct {
 
+	// client
+	Client string `json:"client,omitempty"`
+
 	// db
 	Db string `json:"db,omitempty"`
 

@@ -63,6 +63,42 @@ func (a *Client) DeleteHealthchecksID(params *DeleteHealthchecksIDParams) (*Dele
 }
 
 /*
+DeleteRoutingpoliciesID deletes health check
+
+delete healthCheck
+*/
+func (a *Client) DeleteRoutingpoliciesID(params *DeleteRoutingpoliciesIDParams) (*DeleteRoutingpoliciesIDNoContent, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDeleteRoutingpoliciesIDParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "DeleteRoutingpoliciesID",
+		Method:             "DELETE",
+		PathPattern:        "/routingpolicies/{id}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &DeleteRoutingpoliciesIDReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*DeleteRoutingpoliciesIDNoContent)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for DeleteRoutingpoliciesID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 GetHealthchecks gets healthchecks
 
 get healthchecks
@@ -95,6 +131,42 @@ func (a *Client) GetHealthchecks(params *GetHealthchecksParams) (*GetHealthcheck
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for GetHealthchecks: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+GetRoutingpolicies gets routingpolicies
+
+get routingpolicies
+*/
+func (a *Client) GetRoutingpolicies(params *GetRoutingpoliciesParams) (*GetRoutingpoliciesOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewGetRoutingpoliciesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "GetRoutingpolicies",
+		Method:             "GET",
+		PathPattern:        "/routingpolicies",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &GetRoutingpoliciesReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*GetRoutingpoliciesOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for GetRoutingpolicies: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -135,6 +207,42 @@ func (a *Client) PostHealthchecks(params *PostHealthchecksParams) (*PostHealthch
 }
 
 /*
+PostRoutingpolicies creates health check
+
+create healthCheck
+*/
+func (a *Client) PostRoutingpolicies(params *PostRoutingpoliciesParams) (*PostRoutingpoliciesCreated, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPostRoutingpoliciesParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PostRoutingpolicies",
+		Method:             "POST",
+		PathPattern:        "/routingpolicies",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &PostRoutingpoliciesReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PostRoutingpoliciesCreated)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for PostRoutingpolicies: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 PutHealthchecksID updates health check
 
 update healthCheck
@@ -167,6 +275,42 @@ func (a *Client) PutHealthchecksID(params *PutHealthchecksIDParams) (*PutHealthc
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for PutHealthchecksID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+PutRoutingpoliciesID updates health check
+
+update healthCheck
+*/
+func (a *Client) PutRoutingpoliciesID(params *PutRoutingpoliciesIDParams) (*PutRoutingpoliciesIDOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewPutRoutingpoliciesIDParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "PutRoutingpoliciesID",
+		Method:             "PUT",
+		PathPattern:        "/routingpolicies/{id}",
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"http"},
+		Params:             params,
+		Reader:             &PutRoutingpoliciesIDReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*PutRoutingpoliciesIDOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for PutRoutingpoliciesID: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

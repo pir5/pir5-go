@@ -15,6 +15,9 @@ import (
 // swagger:model model.RoutingPolicy
 type ModelRoutingPolicy struct {
 
+	// client
+	Client string `json:"client,omitempty"`
+
 	// db
 	Db string `json:"db,omitempty"`
 
