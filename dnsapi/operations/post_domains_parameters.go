@@ -15,12 +15,14 @@ import (
 	cr "github.com/go-openapi/runtime/client"
 
 	strfmt "github.com/go-openapi/strfmt"
+
+	model "github.com/pir5/pir5-go/dnsapi/model"
 )
 
 // NewPostDomainsParams creates a new PostDomainsParams object
 // with the default values initialized.
 func NewPostDomainsParams() *PostDomainsParams {
-
+	var ()
 	return &PostDomainsParams{
 
 		timeout: cr.DefaultTimeout,
@@ -30,7 +32,7 @@ func NewPostDomainsParams() *PostDomainsParams {
 // NewPostDomainsParamsWithTimeout creates a new PostDomainsParams object
 // with the default values initialized, and the ability to set a timeout on a request
 func NewPostDomainsParamsWithTimeout(timeout time.Duration) *PostDomainsParams {
-
+	var ()
 	return &PostDomainsParams{
 
 		timeout: timeout,
@@ -40,7 +42,7 @@ func NewPostDomainsParamsWithTimeout(timeout time.Duration) *PostDomainsParams {
 // NewPostDomainsParamsWithContext creates a new PostDomainsParams object
 // with the default values initialized, and the ability to set a context for a request
 func NewPostDomainsParamsWithContext(ctx context.Context) *PostDomainsParams {
-
+	var ()
 	return &PostDomainsParams{
 
 		Context: ctx,
@@ -50,7 +52,7 @@ func NewPostDomainsParamsWithContext(ctx context.Context) *PostDomainsParams {
 // NewPostDomainsParamsWithHTTPClient creates a new PostDomainsParams object
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewPostDomainsParamsWithHTTPClient(client *http.Client) *PostDomainsParams {
-
+	var ()
 	return &PostDomainsParams{
 		HTTPClient: client,
 	}
@@ -60,6 +62,13 @@ func NewPostDomainsParamsWithHTTPClient(client *http.Client) *PostDomainsParams 
 for the post domains operation typically these are written to a http.Request
 */
 type PostDomainsParams struct {
+
+	/*Domain
+	  Domain Object
+
+	*/
+	Domain *model.ModelDomain
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -98,6 +107,17 @@ func (o *PostDomainsParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
+// WithDomain adds the domain to the post domains params
+func (o *PostDomainsParams) WithDomain(domain *model.ModelDomain) *PostDomainsParams {
+	o.SetDomain(domain)
+	return o
+}
+
+// SetDomain adds the domain to the post domains params
+func (o *PostDomainsParams) SetDomain(domain *model.ModelDomain) {
+	o.Domain = domain
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *PostDomainsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -105,6 +125,12 @@ func (o *PostDomainsParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.R
 		return err
 	}
 	var res []error
+
+	if o.Domain != nil {
+		if err := r.SetBodyParam(o.Domain); err != nil {
+			return err
+		}
+	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
