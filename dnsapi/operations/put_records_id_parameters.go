@@ -17,7 +17,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	model "github.com/pir5/pdns-api/model"
+	model "github.com/pir5/pir5-go/dnsapi/model"
 )
 
 // NewPutRecordsIDParams creates a new PutRecordsIDParams object

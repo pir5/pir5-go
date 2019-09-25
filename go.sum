@@ -167,6 +167,8 @@ github.com/pborman/uuid v1.2.0/go.mod h1:X/NO0urCmaxf9VXbdlT7C2Yzkj2IKimNn4k+gtP
 github.com/pierrec/lz4 v2.0.5+incompatible/go.mod h1:pdkljMzZIN41W+lC3N2tnIh5sFi+IEE17M5jbnwPHcY=
 github.com/pir5/pdns-api v0.0.0-20190925064259-7bf0ee88c411 h1:Fu0ZOI//+c+mRTcJXscJiNeLqKTQ9XUV0ntAPNhV+2M=
 github.com/pir5/pdns-api v0.0.0-20190925064259-7bf0ee88c411/go.mod h1:chAvDx2XkyTkN5AjV2MaFh+QumHBn/QjnlqQaD/HoOM=
+github.com/pir5/pdns-api v0.0.0-20190925070540-331ada785855 h1:N2EbM7dI49RdM7A1nPUAqaejCuesXgEtTrJOFK73z5I=
+github.com/pir5/pdns-api v0.0.0-20190925070540-331ada785855/go.mod h1:chAvDx2XkyTkN5AjV2MaFh+QumHBn/QjnlqQaD/HoOM=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
