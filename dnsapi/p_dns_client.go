@@ -11,7 +11,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/pir5/pdns-api/client/operations"
+	"github.com/pir5/pir5-go/dnsapi/operations"
 )
 
 // Default p DNS HTTP client.
