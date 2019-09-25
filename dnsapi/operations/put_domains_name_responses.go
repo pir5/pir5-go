@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // PutDomainsNameReader is a Reader for the PutDomainsName structure.
@@ -64,20 +64,20 @@ func NewPutDomainsNameOK() *PutDomainsNameOK {
 OK
 */
 type PutDomainsNameOK struct {
-	Payload *models.ModelDomain
+	Payload *model.ModelDomain
 }
 
 func (o *PutDomainsNameOK) Error() string {
 	return fmt.Sprintf("[PUT /domains/{name}][%d] putDomainsNameOK  %+v", 200, o.Payload)
 }
 
-func (o *PutDomainsNameOK) GetPayload() *models.ModelDomain {
+func (o *PutDomainsNameOK) GetPayload() *model.ModelDomain {
 	return o.Payload
 }
 
 func (o *PutDomainsNameOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelDomain)
+	o.Payload = new(model.ModelDomain)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewPutDomainsNameForbidden() *PutDomainsNameForbidden {
 Forbidden
 */
 type PutDomainsNameForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutDomainsNameForbidden) Error() string {
 	return fmt.Sprintf("[PUT /domains/{name}][%d] putDomainsNameForbidden  %+v", 403, o.Payload)
 }
 
-func (o *PutDomainsNameForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutDomainsNameForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewPutDomainsNameNotFound() *PutDomainsNameNotFound {
 Not Found
 */
 type PutDomainsNameNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutDomainsNameNotFound) Error() string {
 	return fmt.Sprintf("[PUT /domains/{name}][%d] putDomainsNameNotFound  %+v", 404, o.Payload)
 }
 
-func (o *PutDomainsNameNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutDomainsNameNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewPutDomainsNameInternalServerError() *PutDomainsNameInternalServerError {
 Internal Server Error
 */
 type PutDomainsNameInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutDomainsNameInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /domains/{name}][%d] putDomainsNameInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PutDomainsNameInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutDomainsNameInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

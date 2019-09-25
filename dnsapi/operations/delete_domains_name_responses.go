@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // DeleteDomainsNameReader is a Reader for the DeleteDomainsName structure.
@@ -64,20 +64,20 @@ func NewDeleteDomainsNameNoContent() *DeleteDomainsNameNoContent {
 No Content
 */
 type DeleteDomainsNameNoContent struct {
-	Payload *models.ModelDomain
+	Payload *model.ModelDomain
 }
 
 func (o *DeleteDomainsNameNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /domains/{name}][%d] deleteDomainsNameNoContent  %+v", 204, o.Payload)
 }
 
-func (o *DeleteDomainsNameNoContent) GetPayload() *models.ModelDomain {
+func (o *DeleteDomainsNameNoContent) GetPayload() *model.ModelDomain {
 	return o.Payload
 }
 
 func (o *DeleteDomainsNameNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelDomain)
+	o.Payload = new(model.ModelDomain)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewDeleteDomainsNameForbidden() *DeleteDomainsNameForbidden {
 Forbidden
 */
 type DeleteDomainsNameForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteDomainsNameForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /domains/{name}][%d] deleteDomainsNameForbidden  %+v", 403, o.Payload)
 }
 
-func (o *DeleteDomainsNameForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteDomainsNameForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewDeleteDomainsNameNotFound() *DeleteDomainsNameNotFound {
 Not Found
 */
 type DeleteDomainsNameNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteDomainsNameNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /domains/{name}][%d] deleteDomainsNameNotFound  %+v", 404, o.Payload)
 }
 
-func (o *DeleteDomainsNameNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteDomainsNameNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewDeleteDomainsNameInternalServerError() *DeleteDomainsNameInternalServerE
 Internal Server Error
 */
 type DeleteDomainsNameInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteDomainsNameInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /domains/{name}][%d] deleteDomainsNameInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *DeleteDomainsNameInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteDomainsNameInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

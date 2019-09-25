@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // NewPostRecordsParams creates a new PostRecordsParams object
@@ -67,7 +67,7 @@ type PostRecordsParams struct {
 	  Record Object
 
 	*/
-	Record *models.ModelRecord
+	Record *model.ModelRecord
 
 	timeout    time.Duration
 	Context    context.Context
@@ -108,13 +108,13 @@ func (o *PostRecordsParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithRecord adds the record to the post records params
-func (o *PostRecordsParams) WithRecord(record *models.ModelRecord) *PostRecordsParams {
+func (o *PostRecordsParams) WithRecord(record *model.ModelRecord) *PostRecordsParams {
 	o.SetRecord(record)
 	return o
 }
 
 // SetRecord adds the record to the post records params
-func (o *PostRecordsParams) SetRecord(record *models.ModelRecord) {
+func (o *PostRecordsParams) SetRecord(record *model.ModelRecord) {
 	o.Record = record
 }
 

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // GetRecordsReader is a Reader for the GetRecords structure.
@@ -58,14 +58,14 @@ func NewGetRecordsOK() *GetRecordsOK {
 OK
 */
 type GetRecordsOK struct {
-	Payload []*models.ModelRecord
+	Payload []*model.ModelRecord
 }
 
 func (o *GetRecordsOK) Error() string {
 	return fmt.Sprintf("[GET /records][%d] getRecordsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetRecordsOK) GetPayload() []*models.ModelRecord {
+func (o *GetRecordsOK) GetPayload() []*model.ModelRecord {
 	return o.Payload
 }
 
@@ -89,14 +89,14 @@ func NewGetRecordsNotFound() *GetRecordsNotFound {
 Not Found
 */
 type GetRecordsNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *GetRecordsNotFound) Error() string {
 	return fmt.Sprintf("[GET /records][%d] getRecordsNotFound  %+v", 404, o.Payload)
 }
 
-func (o *GetRecordsNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *GetRecordsNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -120,14 +120,14 @@ func NewGetRecordsInternalServerError() *GetRecordsInternalServerError {
 Internal Server Error
 */
 type GetRecordsInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *GetRecordsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /records][%d] getRecordsInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *GetRecordsInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *GetRecordsInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

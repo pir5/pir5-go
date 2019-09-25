@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // GetDomainsReader is a Reader for the GetDomains structure.
@@ -58,14 +58,14 @@ func NewGetDomainsOK() *GetDomainsOK {
 OK
 */
 type GetDomainsOK struct {
-	Payload []*models.ModelDomain
+	Payload []*model.ModelDomain
 }
 
 func (o *GetDomainsOK) Error() string {
 	return fmt.Sprintf("[GET /domains][%d] getDomainsOK  %+v", 200, o.Payload)
 }
 
-func (o *GetDomainsOK) GetPayload() []*models.ModelDomain {
+func (o *GetDomainsOK) GetPayload() []*model.ModelDomain {
 	return o.Payload
 }
 
@@ -89,14 +89,14 @@ func NewGetDomainsNotFound() *GetDomainsNotFound {
 Not Found
 */
 type GetDomainsNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *GetDomainsNotFound) Error() string {
 	return fmt.Sprintf("[GET /domains][%d] getDomainsNotFound  %+v", 404, o.Payload)
 }
 
-func (o *GetDomainsNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *GetDomainsNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -120,14 +120,14 @@ func NewGetDomainsInternalServerError() *GetDomainsInternalServerError {
 Internal Server Error
 */
 type GetDomainsInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *GetDomainsInternalServerError) Error() string {
 	return fmt.Sprintf("[GET /domains][%d] getDomainsInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *GetDomainsInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *GetDomainsInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

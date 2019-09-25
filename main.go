@@ -15,7 +15,10 @@ func main() {
 	id := int64(2)
 	p := operations.NewGetDomainsParamsWithTimeout(10 * time.Second)
 	p.ID = &id
-	res, err := client.Operations.GetDomains(p)
+	res, err := client.Operations.GetDomains(p, dnsapi.HeaderAuthentication{
+		ID:     "pir-5-id",
+		Secret: "pir-5-secret",
+	})
 	pp.Println(err)
 	pp.Println(res)
 }

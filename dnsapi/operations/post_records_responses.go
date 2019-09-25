@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // PostRecordsReader is a Reader for the PostRecords structure.
@@ -64,20 +64,20 @@ func NewPostRecordsCreated() *PostRecordsCreated {
 Created
 */
 type PostRecordsCreated struct {
-	Payload *models.ModelRecord
+	Payload *model.ModelRecord
 }
 
 func (o *PostRecordsCreated) Error() string {
 	return fmt.Sprintf("[POST /records][%d] postRecordsCreated  %+v", 201, o.Payload)
 }
 
-func (o *PostRecordsCreated) GetPayload() *models.ModelRecord {
+func (o *PostRecordsCreated) GetPayload() *model.ModelRecord {
 	return o.Payload
 }
 
 func (o *PostRecordsCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelRecord)
+	o.Payload = new(model.ModelRecord)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewPostRecordsForbidden() *PostRecordsForbidden {
 Forbidden
 */
 type PostRecordsForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostRecordsForbidden) Error() string {
 	return fmt.Sprintf("[POST /records][%d] postRecordsForbidden  %+v", 403, o.Payload)
 }
 
-func (o *PostRecordsForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostRecordsForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewPostRecordsNotFound() *PostRecordsNotFound {
 Not Found
 */
 type PostRecordsNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostRecordsNotFound) Error() string {
 	return fmt.Sprintf("[POST /records][%d] postRecordsNotFound  %+v", 404, o.Payload)
 }
 
-func (o *PostRecordsNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostRecordsNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewPostRecordsInternalServerError() *PostRecordsInternalServerError {
 Internal Server Error
 */
 type PostRecordsInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostRecordsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /records][%d] postRecordsInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PostRecordsInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostRecordsInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

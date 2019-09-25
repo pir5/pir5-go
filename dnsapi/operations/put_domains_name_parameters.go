@@ -16,7 +16,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // NewPutDomainsNameParams creates a new PutDomainsNameParams object
@@ -67,7 +67,7 @@ type PutDomainsNameParams struct {
 	  Domain Object
 
 	*/
-	Domain *models.ModelDomain
+	Domain *model.ModelDomain
 	/*Name
 	  Dorain Name
 
@@ -113,13 +113,13 @@ func (o *PutDomainsNameParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDomain adds the domain to the put domains name params
-func (o *PutDomainsNameParams) WithDomain(domain *models.ModelDomain) *PutDomainsNameParams {
+func (o *PutDomainsNameParams) WithDomain(domain *model.ModelDomain) *PutDomainsNameParams {
 	o.SetDomain(domain)
 	return o
 }
 
 // SetDomain adds the domain to the put domains name params
-func (o *PutDomainsNameParams) SetDomain(domain *models.ModelDomain) {
+func (o *PutDomainsNameParams) SetDomain(domain *model.ModelDomain) {
 	o.Domain = domain
 }
 

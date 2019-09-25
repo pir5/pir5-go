@@ -31,7 +31,7 @@ DeleteDomainsName deletes domain
 
 delete domain
 */
-func (a *Client) DeleteDomainsName(params *DeleteDomainsNameParams) (*DeleteDomainsNameNoContent, error) {
+func (a *Client) DeleteDomainsName(params *DeleteDomainsNameParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteDomainsNameNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteDomainsNameParams()
@@ -46,6 +46,7 @@ func (a *Client) DeleteDomainsName(params *DeleteDomainsNameParams) (*DeleteDoma
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &DeleteDomainsNameReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -67,7 +68,7 @@ DeleteRecordsID deletes record
 
 delete record
 */
-func (a *Client) DeleteRecordsID(params *DeleteRecordsIDParams) (*DeleteRecordsIDNoContent, error) {
+func (a *Client) DeleteRecordsID(params *DeleteRecordsIDParams, authInfo runtime.ClientAuthInfoWriter) (*DeleteRecordsIDNoContent, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDeleteRecordsIDParams()
@@ -82,6 +83,7 @@ func (a *Client) DeleteRecordsID(params *DeleteRecordsIDParams) (*DeleteRecordsI
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &DeleteRecordsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -103,7 +105,7 @@ GetDomains gets domains
 
 get domains
 */
-func (a *Client) GetDomains(params *GetDomainsParams) (*GetDomainsOK, error) {
+func (a *Client) GetDomains(params *GetDomainsParams, authInfo runtime.ClientAuthInfoWriter) (*GetDomainsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetDomainsParams()
@@ -118,6 +120,7 @@ func (a *Client) GetDomains(params *GetDomainsParams) (*GetDomainsOK, error) {
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &GetDomainsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -139,7 +142,7 @@ GetRecords gets records
 
 get records
 */
-func (a *Client) GetRecords(params *GetRecordsParams) (*GetRecordsOK, error) {
+func (a *Client) GetRecords(params *GetRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*GetRecordsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGetRecordsParams()
@@ -154,6 +157,7 @@ func (a *Client) GetRecords(params *GetRecordsParams) (*GetRecordsOK, error) {
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &GetRecordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -209,7 +213,7 @@ PostRecords creates record
 
 create record
 */
-func (a *Client) PostRecords(params *PostRecordsParams) (*PostRecordsCreated, error) {
+func (a *Client) PostRecords(params *PostRecordsParams, authInfo runtime.ClientAuthInfoWriter) (*PostRecordsCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostRecordsParams()
@@ -224,6 +228,7 @@ func (a *Client) PostRecords(params *PostRecordsParams) (*PostRecordsCreated, er
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PostRecordsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -245,7 +250,7 @@ PutDomainsName updates domain
 
 update domain
 */
-func (a *Client) PutDomainsName(params *PutDomainsNameParams) (*PutDomainsNameOK, error) {
+func (a *Client) PutDomainsName(params *PutDomainsNameParams, authInfo runtime.ClientAuthInfoWriter) (*PutDomainsNameOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutDomainsNameParams()
@@ -260,6 +265,7 @@ func (a *Client) PutDomainsName(params *PutDomainsNameParams) (*PutDomainsNameOK
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutDomainsNameReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -281,7 +287,7 @@ PutRecordsDisableID disables record
 
 disable record
 */
-func (a *Client) PutRecordsDisableID(params *PutRecordsDisableIDParams) (*PutRecordsDisableIDOK, error) {
+func (a *Client) PutRecordsDisableID(params *PutRecordsDisableIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRecordsDisableIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutRecordsDisableIDParams()
@@ -296,6 +302,7 @@ func (a *Client) PutRecordsDisableID(params *PutRecordsDisableIDParams) (*PutRec
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutRecordsDisableIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -317,7 +324,7 @@ PutRecordsEnableID enables record
 
 enable record
 */
-func (a *Client) PutRecordsEnableID(params *PutRecordsEnableIDParams) (*PutRecordsEnableIDOK, error) {
+func (a *Client) PutRecordsEnableID(params *PutRecordsEnableIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRecordsEnableIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutRecordsEnableIDParams()
@@ -332,6 +339,7 @@ func (a *Client) PutRecordsEnableID(params *PutRecordsEnableIDParams) (*PutRecor
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutRecordsEnableIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -353,7 +361,7 @@ PutRecordsID updates record
 
 update record
 */
-func (a *Client) PutRecordsID(params *PutRecordsIDParams) (*PutRecordsIDOK, error) {
+func (a *Client) PutRecordsID(params *PutRecordsIDParams, authInfo runtime.ClientAuthInfoWriter) (*PutRecordsIDOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPutRecordsIDParams()
@@ -368,6 +376,7 @@ func (a *Client) PutRecordsID(params *PutRecordsIDParams) (*PutRecordsIDOK, erro
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PutRecordsIDReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})

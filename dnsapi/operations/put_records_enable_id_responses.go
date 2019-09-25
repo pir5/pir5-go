@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // PutRecordsEnableIDReader is a Reader for the PutRecordsEnableID structure.
@@ -64,20 +64,20 @@ func NewPutRecordsEnableIDOK() *PutRecordsEnableIDOK {
 OK
 */
 type PutRecordsEnableIDOK struct {
-	Payload *models.ModelRecord
+	Payload *model.ModelRecord
 }
 
 func (o *PutRecordsEnableIDOK) Error() string {
 	return fmt.Sprintf("[PUT /records/enable/{id}][%d] putRecordsEnableIdOK  %+v", 200, o.Payload)
 }
 
-func (o *PutRecordsEnableIDOK) GetPayload() *models.ModelRecord {
+func (o *PutRecordsEnableIDOK) GetPayload() *model.ModelRecord {
 	return o.Payload
 }
 
 func (o *PutRecordsEnableIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelRecord)
+	o.Payload = new(model.ModelRecord)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewPutRecordsEnableIDForbidden() *PutRecordsEnableIDForbidden {
 Forbidden
 */
 type PutRecordsEnableIDForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutRecordsEnableIDForbidden) Error() string {
 	return fmt.Sprintf("[PUT /records/enable/{id}][%d] putRecordsEnableIdForbidden  %+v", 403, o.Payload)
 }
 
-func (o *PutRecordsEnableIDForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutRecordsEnableIDForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewPutRecordsEnableIDNotFound() *PutRecordsEnableIDNotFound {
 Not Found
 */
 type PutRecordsEnableIDNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutRecordsEnableIDNotFound) Error() string {
 	return fmt.Sprintf("[PUT /records/enable/{id}][%d] putRecordsEnableIdNotFound  %+v", 404, o.Payload)
 }
 
-func (o *PutRecordsEnableIDNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutRecordsEnableIDNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewPutRecordsEnableIDInternalServerError() *PutRecordsEnableIDInternalServe
 Internal Server Error
 */
 type PutRecordsEnableIDInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PutRecordsEnableIDInternalServerError) Error() string {
 	return fmt.Sprintf("[PUT /records/enable/{id}][%d] putRecordsEnableIdInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PutRecordsEnableIDInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *PutRecordsEnableIDInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // PostDomainsReader is a Reader for the PostDomains structure.
@@ -64,20 +64,20 @@ func NewPostDomainsCreated() *PostDomainsCreated {
 Created
 */
 type PostDomainsCreated struct {
-	Payload *models.ModelDomain
+	Payload *model.ModelDomain
 }
 
 func (o *PostDomainsCreated) Error() string {
 	return fmt.Sprintf("[POST /domains][%d] postDomainsCreated  %+v", 201, o.Payload)
 }
 
-func (o *PostDomainsCreated) GetPayload() *models.ModelDomain {
+func (o *PostDomainsCreated) GetPayload() *model.ModelDomain {
 	return o.Payload
 }
 
 func (o *PostDomainsCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelDomain)
+	o.Payload = new(model.ModelDomain)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewPostDomainsForbidden() *PostDomainsForbidden {
 Forbidden
 */
 type PostDomainsForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostDomainsForbidden) Error() string {
 	return fmt.Sprintf("[POST /domains][%d] postDomainsForbidden  %+v", 403, o.Payload)
 }
 
-func (o *PostDomainsForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostDomainsForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewPostDomainsNotFound() *PostDomainsNotFound {
 Not Found
 */
 type PostDomainsNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostDomainsNotFound) Error() string {
 	return fmt.Sprintf("[POST /domains][%d] postDomainsNotFound  %+v", 404, o.Payload)
 }
 
-func (o *PostDomainsNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostDomainsNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewPostDomainsInternalServerError() *PostDomainsInternalServerError {
 Internal Server Error
 */
 type PostDomainsInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *PostDomainsInternalServerError) Error() string {
 	return fmt.Sprintf("[POST /domains][%d] postDomainsInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *PostDomainsInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *PostDomainsInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

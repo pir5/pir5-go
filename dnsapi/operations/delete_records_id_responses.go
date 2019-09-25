@@ -13,7 +13,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // DeleteRecordsIDReader is a Reader for the DeleteRecordsID structure.
@@ -64,20 +64,20 @@ func NewDeleteRecordsIDNoContent() *DeleteRecordsIDNoContent {
 No Content
 */
 type DeleteRecordsIDNoContent struct {
-	Payload *models.ModelRecord
+	Payload *model.ModelRecord
 }
 
 func (o *DeleteRecordsIDNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /records/{id}][%d] deleteRecordsIdNoContent  %+v", 204, o.Payload)
 }
 
-func (o *DeleteRecordsIDNoContent) GetPayload() *models.ModelRecord {
+func (o *DeleteRecordsIDNoContent) GetPayload() *model.ModelRecord {
 	return o.Payload
 }
 
 func (o *DeleteRecordsIDNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ModelRecord)
+	o.Payload = new(model.ModelRecord)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -97,14 +97,14 @@ func NewDeleteRecordsIDForbidden() *DeleteRecordsIDForbidden {
 Forbidden
 */
 type DeleteRecordsIDForbidden struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteRecordsIDForbidden) Error() string {
 	return fmt.Sprintf("[DELETE /records/{id}][%d] deleteRecordsIdForbidden  %+v", 403, o.Payload)
 }
 
-func (o *DeleteRecordsIDForbidden) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteRecordsIDForbidden) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -128,14 +128,14 @@ func NewDeleteRecordsIDNotFound() *DeleteRecordsIDNotFound {
 Not Found
 */
 type DeleteRecordsIDNotFound struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteRecordsIDNotFound) Error() string {
 	return fmt.Sprintf("[DELETE /records/{id}][%d] deleteRecordsIdNotFound  %+v", 404, o.Payload)
 }
 
-func (o *DeleteRecordsIDNotFound) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteRecordsIDNotFound) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 
@@ -159,14 +159,14 @@ func NewDeleteRecordsIDInternalServerError() *DeleteRecordsIDInternalServerError
 Internal Server Error
 */
 type DeleteRecordsIDInternalServerError struct {
-	Payload models.PdnsAPIHTTPError
+	Payload model.PdnsAPIHTTPError
 }
 
 func (o *DeleteRecordsIDInternalServerError) Error() string {
 	return fmt.Sprintf("[DELETE /records/{id}][%d] deleteRecordsIdInternalServerError  %+v", 500, o.Payload)
 }
 
-func (o *DeleteRecordsIDInternalServerError) GetPayload() models.PdnsAPIHTTPError {
+func (o *DeleteRecordsIDInternalServerError) GetPayload() model.PdnsAPIHTTPError {
 	return o.Payload
 }
 

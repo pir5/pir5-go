@@ -17,7 +17,7 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	models "github.com/pir5/pdns-api/models"
+	model "github.com/pir5/pdns-api/model"
 )
 
 // NewPutRecordsDisableIDParams creates a new PutRecordsDisableIDParams object
@@ -73,7 +73,7 @@ type PutRecordsDisableIDParams struct {
 	  Record Object
 
 	*/
-	Record *models.ModelRecord
+	Record *model.ModelRecord
 
 	timeout    time.Duration
 	Context    context.Context
@@ -125,13 +125,13 @@ func (o *PutRecordsDisableIDParams) SetID(id int64) {
 }
 
 // WithRecord adds the record to the put records disable ID params
-func (o *PutRecordsDisableIDParams) WithRecord(record *models.ModelRecord) *PutRecordsDisableIDParams {
+func (o *PutRecordsDisableIDParams) WithRecord(record *model.ModelRecord) *PutRecordsDisableIDParams {
 	o.SetRecord(record)
 	return o
 }
 
 // SetRecord adds the record to the put records disable ID params
-func (o *PutRecordsDisableIDParams) SetRecord(record *models.ModelRecord) {
+func (o *PutRecordsDisableIDParams) SetRecord(record *model.ModelRecord) {
 	o.Record = record
 }
 
