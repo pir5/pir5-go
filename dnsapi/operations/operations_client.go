@@ -175,9 +175,11 @@ func (a *Client) GetRecords(params *GetRecordsParams, authInfo runtime.ClientAut
 }
 
 /*
-PostDomains post domains API
+PostDomains creates domain
+
+create domain
 */
-func (a *Client) PostDomains(params *PostDomainsParams) (*PostDomainsCreated, error) {
+func (a *Client) PostDomains(params *PostDomainsParams, authInfo runtime.ClientAuthInfoWriter) (*PostDomainsCreated, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewPostDomainsParams()
@@ -187,11 +189,12 @@ func (a *Client) PostDomains(params *PostDomainsParams) (*PostDomainsCreated, er
 		ID:                 "PostDomains",
 		Method:             "POST",
 		PathPattern:        "/domains",
-		ProducesMediaTypes: []string{""},
-		ConsumesMediaTypes: []string{""},
+		ProducesMediaTypes: []string{"application/json"},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"http"},
 		Params:             params,
 		Reader:             &PostDomainsReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
