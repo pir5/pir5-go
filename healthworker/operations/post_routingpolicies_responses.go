@@ -64,21 +64,23 @@ func NewPostRoutingpoliciesCreated() *PostRoutingpoliciesCreated {
 Created
 */
 type PostRoutingpoliciesCreated struct {
-	Payload model.ModelRoutingPolicyModel
+	Payload *model.ModelRoutingPolicy
 }
 
 func (o *PostRoutingpoliciesCreated) Error() string {
 	return fmt.Sprintf("[POST /routingpolicies][%d] postRoutingpoliciesCreated  %+v", 201, o.Payload)
 }
 
-func (o *PostRoutingpoliciesCreated) GetPayload() model.ModelRoutingPolicyModel {
+func (o *PostRoutingpoliciesCreated) GetPayload() *model.ModelRoutingPolicy {
 	return o.Payload
 }
 
 func (o *PostRoutingpoliciesCreated) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(model.ModelRoutingPolicy)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

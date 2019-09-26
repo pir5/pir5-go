@@ -64,21 +64,23 @@ func NewPutRoutingpoliciesIDOK() *PutRoutingpoliciesIDOK {
 OK
 */
 type PutRoutingpoliciesIDOK struct {
-	Payload model.ModelRoutingPolicyModel
+	Payload *model.ModelRoutingPolicy
 }
 
 func (o *PutRoutingpoliciesIDOK) Error() string {
 	return fmt.Sprintf("[PUT /routingpolicies/{id}][%d] putRoutingpoliciesIdOK  %+v", 200, o.Payload)
 }
 
-func (o *PutRoutingpoliciesIDOK) GetPayload() model.ModelRoutingPolicyModel {
+func (o *PutRoutingpoliciesIDOK) GetPayload() *model.ModelRoutingPolicy {
 	return o.Payload
 }
 
 func (o *PutRoutingpoliciesIDOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(model.ModelRoutingPolicy)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

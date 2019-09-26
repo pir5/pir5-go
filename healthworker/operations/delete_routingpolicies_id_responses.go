@@ -64,21 +64,23 @@ func NewDeleteRoutingpoliciesIDNoContent() *DeleteRoutingpoliciesIDNoContent {
 No Content
 */
 type DeleteRoutingpoliciesIDNoContent struct {
-	Payload model.ModelRoutingPolicyModel
+	Payload *model.ModelRoutingPolicy
 }
 
 func (o *DeleteRoutingpoliciesIDNoContent) Error() string {
 	return fmt.Sprintf("[DELETE /routingpolicies/{id}][%d] deleteRoutingpoliciesIdNoContent  %+v", 204, o.Payload)
 }
 
-func (o *DeleteRoutingpoliciesIDNoContent) GetPayload() model.ModelRoutingPolicyModel {
+func (o *DeleteRoutingpoliciesIDNoContent) GetPayload() *model.ModelRoutingPolicy {
 	return o.Payload
 }
 
 func (o *DeleteRoutingpoliciesIDNoContent) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(model.ModelRoutingPolicy)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

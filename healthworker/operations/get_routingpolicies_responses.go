@@ -58,14 +58,14 @@ func NewGetRoutingpoliciesOK() *GetRoutingpoliciesOK {
 OK
 */
 type GetRoutingpoliciesOK struct {
-	Payload []model.ModelRoutingPolicyModel
+	Payload []*model.ModelRoutingPolicy
 }
 
 func (o *GetRoutingpoliciesOK) Error() string {
 	return fmt.Sprintf("[GET /routingpolicies][%d] getRoutingpoliciesOK  %+v", 200, o.Payload)
 }
 
-func (o *GetRoutingpoliciesOK) GetPayload() []model.ModelRoutingPolicyModel {
+func (o *GetRoutingpoliciesOK) GetPayload() []*model.ModelRoutingPolicy {
 	return o.Payload
 }
 

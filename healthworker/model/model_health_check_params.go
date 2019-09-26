@@ -34,7 +34,7 @@ type ModelHealthCheckParams struct {
 	SearchWord string `json:"searchWord,omitempty"`
 
 	// timeout
-	Timeout string `json:"timeout,omitempty"`
+	Timeout int64 `json:"timeout,omitempty"`
 }
 
 // Validate validates this model health check params
